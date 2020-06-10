@@ -3,7 +3,7 @@ from seleniumbase import BaseCase
 
 class MyTestClass(BaseCase):
 
-    def test_basic(self):
+    def test_basic(self): #este test faz somente uma viagem aleatória pelo site
         #Abrir site
         self.open("http://automationpractice.com/index.php")
         self.maximize_window()
@@ -17,7 +17,8 @@ class MyTestClass(BaseCase):
         self.click('a[id="color_14"]') #escolher cor azul de vestido
         self.click('button[class="exclusive"]')
     
-    def test_submit_email(self):
+    def test_submit_email(self): #Teste que cadastra email para receber noticias e verifica se ja foi cadastrado
+        
         self.open("http://automationpractice.com/index.php")
         self.maximize_window()
 
@@ -26,14 +27,16 @@ class MyTestClass(BaseCase):
         self.assert_text_visible('This email address is already registered.')
 
 
-    def test_wrong_search_item(self):
+    def test_wrong_search_item(self): #test que verifica a mensagem caso o produto que o usuario procurou nao exista
+        
         self.open("http://automationpractice.com/index.php")
         self.maximize_window()
         self.update_text('input[class="search_query form-control ac_input"]', "bombapatch > pes")
         self.click('button[class="btn btn-default button-search"]')
         self.assert_element_visible('p[class="alert alert-warning"]')
 
-    def test_login(self):
+    def test_login(self): #test que faz login, seleciona o produto, confere se foi pro carrinho de forma correta
+        
         self.open("http://automationpractice.com/index.php")
         self.maximize_window()
 
