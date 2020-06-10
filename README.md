@@ -1,10 +1,15 @@
 Dei um Fork do Projeto base do SeleniumBase para faciltar a criação do ambiente de testes.
+
 Com o Python (qualquer versão) e Git instalados, rodar os comandos abaixo:
 
   git clone ""
+  
   cd SeleniumBase
+  
   pip install -r requirements.txt
+  
   python setup.py install
+  
   pip install seleniumbase
   
   
